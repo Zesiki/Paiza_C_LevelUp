@@ -22,7 +22,7 @@ class Program
         {
             Console.WriteLine((time-24).ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0'));
             
-        } else if (time == 23 && minutes >= 60)// 時間だけの計算では日付は超えないが、minutesが60を超える場合 -> 00 : minutes-60
+        } else if (time == 23 && minutes >= 60)// 時間同士の計算では日付は超えないが、minutesが60を超える場合 -> 00 : minutes-60
         {
             Console.WriteLine("00:" + (minutes -60).ToString().PadLeft(2, '0'));
         }
