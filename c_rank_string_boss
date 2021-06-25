@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int week = int.Parse(Console.ReadLine());
+        string [][]data = new string [week][];
+        
+        for (var i=0; i<week; i++)
+        {
+            data[i] = Console.ReadLine().Split(':',' ');
+        
+        int time = int.Parse(data[i][0]) + int.Parse(data[i][2]);
+        int minutes = int.Parse(data[i][1]) + int.Parse(data[i][3]);
+        
+        if (time >= 24 && minutes >= 60) //日付を超えてかつminutesが60以上となる場合 -> time-24+1 : minutes-60
+        {
+            Console.WriteLine((time-24+1).ToString().PadLeft(2, '0') + ":" + (minutes-60).ToString().PadLeft(2, '0'));
+        
+        } else if (time >= 24) //日付を超える場合 -> time-24の数字を表記,minutesはそのまま
+        {
+            Console.WriteLine((time-24).ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0'));
+            
+        } else if (time == 23 && minutes >= 60)// 時間だけの計算では日付は超えないが、minutesが60を超える場合 -> 00 : minutes-60
+        {
+            Console.WriteLine("00:" + (minutes -60).ToString().PadLeft(2, '0'));
+        }
+        else if (time < 23 && minutes >= 60) // 日付は超えず、minutesが60を超える場合 -> time : minutes - 60
+        {
+            Console.WriteLine((time + 1).ToString().PadLeft(2, '0') + ":" + (minutes - 60).ToString().PadLeft(2,'0'));
+        }else
+        {
+            Console.WriteLine(time.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2,'0'));
+        }
+        
+        }
+        
+    }
+}
