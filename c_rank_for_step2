@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       int num = int.Parse(Console.ReadLine());
+       int [] data = new int [num];
+       int judgement = 0; 
+       for (var i = 0; i<num; i++)
+       {
+           data[i] = int.Parse(Console.ReadLine());
+           
+           if(data[i] == 7)
+           {
+               judgement = judgement + 1;
+               
+           } else
+           {
+               judgement = judgement;
+           }
+       }
+       
+       if(judgement == 0)
+       {
+           Console.WriteLine("NO");
+       } else 
+       {
+           Console.WriteLine("YES");
+       }
+    }
+}
