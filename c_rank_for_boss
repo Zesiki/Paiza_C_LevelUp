@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       string [] numbers = Console.ReadLine().Split(' ');
+       int num1 = int.Parse(numbers[0]);
+       int num2 = int.Parse(numbers[1]);
+       string num3 = numbers[2];
+       
+       string [][] data = new string [num1][];
+       for (var i = 0; i<num1; i++)
+       {
+           data[i] = Console.ReadLine().Split(' ');
+           int answer = 0;
+           for (var j =0; j<num2; j++)
+           {
+               if (data[i][j] == num3)
+               {
+                  answer = answer + 1;
+               } else
+               {
+                   answer = answer;
+               }
+           }
+           Console.WriteLine(answer);
+       }
+       
+    }
+}
