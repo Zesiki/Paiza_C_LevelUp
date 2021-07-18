@@ -1,0 +1,21 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+       int num1 = int.Parse(Console.ReadLine());
+       int [] data = new int [num1];
+       
+       for (var i=0; i<num1; i++)
+       {
+           data[i] = int.Parse(Console.ReadLine());
+       }
+       
+       Array.Sort(data);
+       for(var i =0; i<num1; i++)
+       {
+           Console.WriteLine(data[i]);
+       }
+       
+    }
+}
