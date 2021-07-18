@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num1 = int.Parse(Console.ReadLine());
+        string [] letter = new string [num1];
+        for(var i = 0; i<num1; i++)
+        {
+            letter[i] = Console.ReadLine();
+        }
+        int num2 = int.Parse(Console.ReadLine());
+        
+        string [] data = new string [num2];
+        for(var i = 0; i<num2; i++)
+        {
+            data[i] = Console.ReadLine();
+        }
+        
+    for (var i=0; i<num1; i++)
+    {
+        for(var j=0; j<num2; j++)
+        {
+            if (data[j].Contains(letter[i]))
+            {
+                Console.WriteLine("YES");
+            } else 
+            {
+                Console.WriteLine("NO");
+            }
+        }
+    }
+    } 
+}   
